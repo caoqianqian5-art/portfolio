@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Qianqian Cao (Cate), Cross-Platform Content Strategist & Bilingual Cross-Cultural Communicator" />
+  <title>Qianqian Cao (Cate) · Content Strategist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Idiqlat:wght@400&family=Shippori+Mincho+B1:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Variables ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #F7F3EC;
+      --surface:      #FFFFFF;
+      --surface-alt:  #F0E9DC;
+      --text:         #1B1A18;
+      --text-muted:   #68655F;
+      --text-light:   #9A9690;
+      --accent:       #D4641A;
+      --accent-dark:  #A84E14;
+      --accent-light: #F5E8D5;
+      --border:       #E8DDD0;
+      --border-lt:    #F0E8DC;
+      --tag-bg:       #F0E8DC;
+      --font:         'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-w:        1100px;
+      --pad-section:  5rem;
+      --radius:       8px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Typography ─── */
+    h1, h2, h3, h4 { line-height: 1.2; font-weight: 600; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.375rem); letter-spacing: -0.025em; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem);      letter-spacing: -0.015em; }
+    h3 { font-size: 1.0625rem; }
+    p  { color: var(--text-muted); line-height: 1.75; }
+    a  { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: var(--font); cursor: pointer; border: none; background: none; }
+
+    /* ─── Layout helpers ─── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+    section { padding: var(--pad-section) 0; }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.625rem;
+    }
+
+    .subsection-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      margin-top: 2.75rem;
+    }
+    .subsection-head:first-child { margin-top: 0; }
+    .subsection-head h3 { font-size: 1rem; font-weight: 600; white-space: nowrap; }
+    .subsection-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .divider { height: 1px; background: var(--border); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.6875rem 1.375rem;
+      border-radius: var(--radius);
+      transition: all 0.18s;
+      line-height: 1;
+    }
+    .btn-primary  { background: var(--accent); color: #fff; }
+    .btn-primary:hover  { background: var(--accent-dark); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-sm { font-size: 0.8125rem; padding: 0.5rem 1rem; }
+
+    /* ─── Navigation ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; max-width: var(--max-w); margin: 0 auto; padding: 0 2rem;
+    }
+    .nav-logo { font-weight: 600; font-size: 0.9375rem; color: var(--text); letter-spacing: -0.01em; }
+    .nav-logo em { font-style: normal; color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
+      position: relative; transition: color 0.18s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1.5px; background: var(--accent); transition: width 0.18s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
+    .nav-links .nav-cta {
+      padding: 0.5rem 1.125rem; background: var(--accent);
+      color: #fff !important; border-radius: 4px;
+    }
+    .nav-links .nav-cta::after { display: none; }
+    .nav-links .nav-cta:hover { background: var(--accent-dark) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      flex-direction: column; padding: 1.25rem 2rem 1.5rem; gap: 0; z-index: 99;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 1rem; font-weight: 500; color: var(--text-muted);
+      padding: 0.75rem 0; border-bottom: 1px solid var(--border-lt);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ─── Hero ─── */
+    #hero {
+      padding-top: 64px;
+      padding-bottom: 4.5rem;
+      min-height: 94vh;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    .hero-center {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+
+    /* ─── Hanging Text Effect ─── */
+    .name-en { font-family: 'Idiqlat', serif; font-weight: 400; }
+    .name-zh { font-family: 'Shippori Mincho B1', serif; font-weight: 400; }
+
+    .hanging-stage {
+      display: flex; align-items: flex-start; gap: 0.25rem;
+      padding-top: 0; justify-content: center;
+      user-select: none; overflow: visible;
+    }
+    .hang-unit {
+      display: flex; flex-direction: column; align-items: center;
+      cursor: default;
+    }
+    .hang-svg { overflow: visible; display: block; flex-shrink: 0; }
+    .hang-path { stroke: #C8BFB0; stroke-width: 1.2px; fill: none; stroke-linecap: round; }
+    .hang-glyph {
+      font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+      color: var(--text); line-height: 1; margin-top: 3px;
+    }
+    .hang-space { width: clamp(0.625rem, 2vw, 1.375rem); }
+    .hero-subtitle-block {
+      margin-top: 2.75rem;
+      font-size: clamp(1rem, 2.5vw, 1.3125rem);
+      color: var(--text-muted); letter-spacing: -0.005em;
+    }
+    .hero-sub-sep { color: var(--text-light); margin: 0 0.3rem; }
+    .hero-sub-en { font-family: 'Idiqlat', serif; font-weight: 400; }
+    .hero-sub-zh { font-family: 'Shippori Mincho B1', serif; font-weight: 400; }
+    .hero-tagline-brief {
+      margin-top: clamp(3.5rem, 9vh, 6rem);
+      font-size: 0.875rem; color: var(--text-light);
+      letter-spacing: 0.02em; max-width: 500px;
+    }
+    .hero-down-link {
+      margin-top: 2.75rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 500; color: var(--text-light);
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.18s;
+    }
+    .hero-down-link:hover { color: var(--accent); }
+
+    .about-name {
+      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+      letter-spacing: -0.01em; color: var(--text);
+      margin-bottom: 1rem; line-height: 1.3;
+    }
+    .about-name-sep { color: var(--text-light); margin: 0 0.35rem; }
+    .about-name .name-en { font-family: 'Caveat', cursive; font-weight: 700; letter-spacing: 0; }
+
+    /* ─── About ─── */
+    #about { background: var(--surface); }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 2rem; height: 1.5px; background: var(--accent);
+    }
+
+    .hero-name { margin-bottom: 0.25rem; }
+    .hero-alias {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      font-weight: 300; color: var(--text-light);
+      margin-bottom: 1rem; letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: 0.9375rem; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 1.75rem;
+    }
+    .hero-tagline strong { color: var(--text); font-weight: 600; }
+
+    .hero-intro {
+      font-size: 1rem; line-height: 1.8; color: var(--text-muted);
+      margin-bottom: 2.25rem; max-width: 540px;
+    }
+
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* hero right panel */
+    .hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.375rem;
+      transition: border-color 0.18s;
+    }
+    .stat-card:hover { border-color: var(--accent); }
+    .stat-num {
+      font-size: 1.875rem; font-weight: 700; color: var(--text);
+      letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.3rem;
+    }
+    .stat-label { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.4; }
+
+    .platform-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.125rem 1.375rem;
+    }
+    .platform-card-label {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 0.75rem;
+    }
+    .platform-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .ptag {
+      font-size: 0.8125rem; font-weight: 500; color: var(--text-muted);
+      background: var(--tag-bg); padding: 0.3rem 0.75rem; border-radius: 100px;
+    }
+
+    .hero-contact { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+    .hc-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8125rem; color: var(--text-muted);
+    }
+    .hc-item a { transition: color 0.18s; }
+    .hc-item a:hover { color: var(--accent); }
+
+    /* ─── Experience ─── */
+    #experience { background: var(--surface); }
+
+    .section-intro { margin-bottom: 3rem; }
+    .section-intro h2 { margin-bottom: 0.5rem; }
+    .section-intro p { max-width: 560px; }
+
+    /* Education cards */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.125rem; }
+    .edu-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .edu-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(90, 46, 18, 0.10);
+    }
+    .edu-text { flex: 1; padding: 1.625rem; }
+    .edu-img { flex-shrink: 0; }
+    .edu-img img {
+      width: 100%; height: 140px; object-fit: cover; object-position: bottom; display: block;
+    }
+    .edu-school {
+      font-size: 1.1875rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem;
+      letter-spacing: -0.01em; transition: font-size 0.25s ease;
+    }
+    .edu-card:hover .edu-school { font-size: 1.45rem; font-weight: 800; }
+    .edu-degree {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .edu-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .edu-gpa {
+      font-size: 0.8125rem; font-weight: 600; color: var(--accent);
+      background: var(--accent-light); padding: 0.25rem 0.625rem; border-radius: 4px;
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+    .edu-year { font-size: 0.8125rem; color: var(--text-light); }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; }
+    .tl-item {
+      position: relative; padding-left: 1.625rem; padding-bottom: 2.25rem;
+      border-left: 1.5px solid var(--border-lt);
+    }
+    .tl-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -4.5px; top: 16px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--surface);
+      box-shadow: 0 0 0 1.5px var(--accent);
+    }
+    /* tl-card: card wrapper inside each timeline entry */
+    .tl-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.125rem 1.375rem;
+      transition: background 0.25s ease, border-color 0.25s ease,
+                  transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .tl-card:hover {
+      background: var(--surface-alt); border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(90, 46, 18, 0.08);
+    }
+    .tl-card:hover .tl-company     { font-size: 1.125rem; font-weight: 800; }
+    .tl-card:hover .tl-company-link { font-size: 1.125rem; font-weight: 800; }
+    .tl-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1rem; margin-bottom: 0.25rem;
+    }
+    .tl-company { font-size: 0.9375rem; font-weight: 600; color: var(--text); transition: color 0.25s ease, font-size 0.25s ease; }
+    .tl-company-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.9375rem; font-weight: 600; color: var(--text);
+      transition: color 0.18s ease, font-size 0.25s ease;
+    }
+    .tl-company-link:hover { color: var(--accent); }
+    .ext-icon { opacity: 0.4; transition: opacity 0.18s ease; flex-shrink: 0; }
+    .tl-company-link:hover .ext-icon { opacity: 0.85; }
+    .tl-role { font-size: 1rem; color: var(--accent); font-weight: 700; margin-bottom: 0.625rem; transition: color 0.25s ease; }
+    .tl-date { font-size: 0.8125rem; color: var(--text-light); white-space: nowrap; flex-shrink: 0; transition: color 0.25s ease; }
+    .tl-bullets { display: flex; flex-direction: column; gap: 0.35rem; }
+    .tl-bullets li {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.65;
+      padding-left: 1rem; position: relative; transition: color 0.25s ease;
+    }
+    .tl-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--text-light); transition: color 0.25s ease; }
+
+    /* Course project cards */
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.125rem; }
+    .project-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; flex-direction: column; transition: border-color 0.18s;
+    }
+    .project-card:hover { border-color: var(--accent); }
+    .project-tag {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .project-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.375rem; }
+    .project-meta { font-size: 0.8125rem; color: var(--text-light); margin-bottom: 0.75rem; }
+    .project-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
+    .project-foot { display: flex; justify-content: space-between; align-items: center; }
+    .badge {
+      font-size: 0.75rem; font-weight: 600; color: var(--accent);
+      background: var(--accent-light); padding: 0.25rem 0.625rem; border-radius: 4px;
+    }
+    .link-arr {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      font-size: 0.8125rem; font-weight: 500; color: var(--accent); transition: gap 0.18s;
+    }
+    .link-arr:hover { gap: 0.625rem; }
+
+    /* Academic papers */
+    .paper-list { display: flex; flex-direction: column; gap: 1rem; }
+    .paper-item {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      display: grid; grid-template-columns: 32px 1fr; gap: 1.125rem;
+      transition: border-color 0.18s;
+    }
+    .paper-item:hover { border-color: var(--accent); }
+    .paper-num {
+      font-size: 1.25rem; font-weight: 700; color: var(--border);
+      line-height: 1; padding-top: 3px; font-variant-numeric: tabular-nums;
+    }
+    .paper-venue {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
+    }
+    .paper-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .paper-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── Portfolio ─── */
+    #portfolio { background: var(--bg); }
+
+    .work-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.375rem;
+    }
+
+    .work-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+                  border-color 0.25s ease, background 0.25s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border);
+      box-shadow: 0 12px 32px rgba(90, 46, 18, 0.10);
+    }
+    .work-title { transition: font-size 0.2s ease, font-weight 0.15s; }
+    .work-card:hover .work-title { font-size: 1.3125rem; font-weight: 800; }
+
+    .work-thumb {
+      height: 176px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .thumb-a { background: #D4EADE; }
+    .thumb-b { background: #DDD8EE; }
+    .thumb-c { background: #CCE2F0; }
+    .thumb-d { background: #EEEAD0; }
+
+    .thumb-emoji { font-size: 2.25rem; opacity: 0.55; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .work-card:hover .thumb-emoji { transform: scale(1.45); opacity: 0.80; }
+    .thumb-pill {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--text-muted);
+      background: rgba(255,255,255,0.82); padding: 0.3rem 0.625rem; border-radius: 4px;
+    }
+
+    .work-body { padding: 1.375rem; flex: 1; display: flex; flex-direction: column; }
+    .work-type {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+    }
+    .work-title {
+      font-size: 1.0625rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.625rem; line-height: 1.35;
+    }
+    .work-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.7; flex: 1; margin-bottom: 1.125rem; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: 1.125rem; }
+    .work-tags span {
+      font-size: 0.75rem; color: var(--text-muted);
+      background: var(--tag-bg); padding: 0.25rem 0.625rem; border-radius: 100px;
+    }
+    .work-actions { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+
+    /* ─── Skills ─── */
+    #skills { background: var(--surface); }
+
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.125rem; }
+    .skill-cat {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.625rem;
+    }
+    .skill-cat-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.125rem; }
+    .skill-icon {
+      width: 34px; height: 34px; background: var(--accent-light);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      color: var(--accent); flex-shrink: 0;
+    }
+    .skill-cat-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .stag {
+      font-size: 0.9rem; color: var(--text-muted);
+      border: 1px solid var(--border); background: var(--surface);
+      padding: 0.375rem 0.875rem; border-radius: 4px; transition: all 0.18s;
+    }
+    .stag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+    .lang-row {
+      border-top: 1px solid var(--border); margin-top: 1.125rem;
+      padding-top: 1.125rem; display: flex; gap: 2.5rem;
+    }
+    .lang-item-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+    .lang-item-level { font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+    /* ─── Contact / Footer ─── */
+    #contact { background: #1C1510; padding: 4.5rem 0 0; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+    .cl h2 { color: #fff; margin-bottom: 0.875rem; }
+    .cl > p { color: rgba(255,255,255,0.5); font-size: 0.9375rem; line-height: 1.75; margin-bottom: 2rem; }
+
+    .ci-list { display: flex; flex-direction: column; gap: 0.875rem; }
+    .ci-item { display: flex; align-items: center; gap: 0.875rem; }
+    .ci-icon {
+      width: 34px; height: 34px; flex-shrink: 0;
+      background: rgba(255,255,255,0.07); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55);
+    }
+    .ci-text { font-size: 0.875rem; color: rgba(255,255,255,0.7); }
+    .ci-text a { color: rgba(255,255,255,0.7); transition: color 0.18s; }
+    .ci-text a:hover { color: #fff; }
+    .ci-sep { color: rgba(255,255,255,0.25); margin: 0 0.375rem; }
+
+    .cr h3 { color: #fff; font-size: 1rem; margin-bottom: 0.875rem; }
+    .dl-cards { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .dl-card {
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 6px; padding: 1rem 1.25rem; transition: all 0.18s;
+    }
+    .dl-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); }
+    .dl-card-name { font-size: 0.9375rem; font-weight: 500; color: #fff; margin-bottom: 0.2rem; }
+    .dl-card-sub { font-size: 0.8125rem; color: rgba(255,255,255,0.38); }
+    .dl-card-icon { color: rgba(255,255,255,0.45); }
+
+    .social-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.65);
+      padding: 0.625rem 1.125rem; border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 4px; transition: all 0.18s;
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.07); color: #fff; border-color: rgba(255,255,255,0.28); }
+
+    .footer-bar {
+      margin-top: 3.5rem; padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bar p { font-size: 0.8125rem; color: rgba(255,255,255,0.28); }
+
+    /* ─── Modals ─── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7); z-index: 300;
+      align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--surface); border-radius: 12px;
+      width: 100%; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .modal-box.modal-pdf { max-width: 820px; height: 82vh; }
+    .modal-box.modal-vid { max-width: 820px; background: #000; }
+
+    .modal-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+    }
+    .modal-head-dark { background: #111; border-bottom-color: rgba(255,255,255,0.08); }
+    .modal-head span { font-weight: 600; font-size: 0.9375rem; }
+    .modal-head-dark span { color: #fff; }
+    .modal-close {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); transition: background 0.18s; font-size: 1rem; line-height: 1;
+    }
+    .modal-close:hover { background: var(--border-lt); }
+    .modal-head-dark .modal-close { color: rgba(255,255,255,0.55); }
+    .modal-head-dark .modal-close:hover { background: rgba(255,255,255,0.08); }
+
+    .modal-body { flex: 1; overflow: auto; }
+    .modal-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100%; gap: 1.125rem; padding: 3rem; text-align: center;
+      background: var(--bg);
+    }
+    .modal-placeholder-emoji { font-size: 2.75rem; opacity: 0.65; }
+    .modal-placeholder p { max-width: 380px; font-size: 0.9375rem; }
+    .code-inline {
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.8125rem; background: var(--border-lt);
+      padding: 0.25rem 0.5rem; border-radius: 4px; color: var(--text);
+    }
+    .vid-placeholder {
+      aspect-ratio: 16 / 9; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+    }
+    .vid-placeholder p { color: rgba(255,255,255,0.55); font-size: 0.9375rem; max-width: 360px; }
+
+    /* ─── Back to top ─── */
+    .back-top {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 50;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s, background 0.18s;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { background: var(--accent-dark); }
+
+    /* ─── Sound toggle ─── */
+    .sound-btn {
+      position: fixed; bottom: 5.5rem; right: 1.75rem; z-index: 50;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); cursor: pointer;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .sound-btn.show { opacity: 1; pointer-events: auto; }
+    .sound-btn:hover { background: var(--bg); color: var(--text); border-color: var(--accent); }
+    .sound-btn.muted { color: var(--text-light); }
+
+    /* ─── Fade-in animation ─── */
+    .fi {
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .fi.on { opacity: 1; transform: none; }
+    .fi-d1 { transition-delay: 0.05s; }
+    .fi-d2 { transition-delay: 0.1s; }
+    .fi-d3 { transition-delay: 0.15s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      :root { --pad-section: 3.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-right { order: -1; }
+      .stat-grid { grid-template-columns: repeat(4, 1fr); }
+
+      .edu-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --pad-section: 2.5rem; }
+      .container { padding: 0 1.25rem; }
+      .hang-svg { transform: scaleY(0.58); transform-origin: top center; }
+      .hanging-stage { gap: 0.125rem; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
+      .footer-bar { flex-direction: column; gap: 0.375rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Qianqian <em>Cao</em></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+  <!-- ═══ HERO — Hanging Text ═══ -->
+  <section id="hero">
+    <div class="container hero-center">
+
+      <div class="hanging-stage" aria-label="Qianqian Cao">
+        <div class="hang-unit" style="--lh:222px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">Q</span>
+        </div>
+        <div class="hang-unit" style="--lh:215px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">i</span>
+        </div>
+        <div class="hang-unit" style="--lh:228px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">a</span>
+        </div>
+        <div class="hang-unit" style="--lh:220px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">n</span>
+        </div>
+        <div class="hang-unit" style="--lh:226px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">q</span>
+        </div>
+        <div class="hang-unit" style="--lh:213px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">i</span>
+        </div>
+        <div class="hang-unit" style="--lh:224px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">a</span>
+        </div>
+        <div class="hang-unit" style="--lh:219px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">n</span>
+        </div>
+        <div class="hang-space"></div>
+        <div class="hang-unit" style="--lh:229px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">C</span>
+        </div>
+        <div class="hang-unit" style="--lh:223px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">a</span>
+        </div>
+        <div class="hang-unit" style="--lh:217px">
+          <svg class="hang-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path class="hang-path"/></svg>
+          <span class="hang-glyph name-en">o</span>
+        </div>
+      </div>
+
+      <p class="hero-tagline-brief">
+        Cross-Platform Content Strategist &nbsp;·&nbsp; Bilingual EN&thinsp;/&thinsp;中文 &nbsp;·&nbsp; Research &amp; Data-Driven Campaigns
+      </p>
+
+      <a href="#about" class="hero-down-link">
+        About me
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div>
+          <div class="section-label">About</div>
+          <div class="about-name">
+            <span class="name-en">Qianqian Cao (Cate)</span><span class="about-name-sep"> · </span><span class="name-zh">曹芊芊</span>
+          </div>
+          <p class="hero-intro" style="margin-bottom:2rem">
+            MA in Communication at Johns Hopkins (GPA 3.97), specializing in Qualitative &amp; Quantitative Research and Cross-Platform Content Strategy. Bilingual strategist bridging data-driven audience insights with brand storytelling across Chinese and English-speaking markets.
+          </p>
+          <div class="hero-actions" style="margin-bottom:1.75rem">
+            <a href="#portfolio" class="btn btn-primary">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              View Portfolio
+            </a>
+            <a href="#contact" class="btn btn-ghost">Download Resume</a>
+            <a href="https://www.linkedin.com/in/qianqiancao-cate/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn&nbsp;↗</a>
+          </div>
+          <div class="hero-contact">
+            <div class="hc-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <rect x="1" y="3" width="12" height="8" rx=".75" stroke="#9A9690" stroke-width="1.2"/>
+                <path d="M1 4l6 4 6-4" stroke="#9A9690" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <a href="mailto:caoqianqian5@gmail.com">caoqianqian5@gmail.com</a>
+            </div>
+            <div class="hc-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="#9A9690" aria-hidden="true">
+                <path d="M12.25.875H1.75C1.266.875.875 1.266.875 1.75v10.5c0 .484.391.875.875.875h10.5c.484 0 .875-.391.875-.875V1.75c0-.484-.391-.875-.875-.875zm-7.875 10.5H3.063V5.25h1.312v6.125zm-.656-6.97a.766.766 0 110-1.533.766.766 0 010 1.533zm7.656 6.97H9.063V8.313c0-.61-.021-1.395-.85-1.395-.852 0-.982.665-.982 1.352v3.105H5.918V5.25h1.26v.836h.018c.176-.333.604-.683 1.243-.683 1.33 0 1.575.875 1.575 2.013v3.959z"/>
+              </svg>
+              <a href="https://www.linkedin.com/in/qianqiancao-cate/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stat-grid">
+            <div class="stat-card fi fi-d1">
+              <div class="stat-num">3.97</div>
+              <div class="stat-label">GPA · Johns Hopkins</div>
+            </div>
+            <div class="stat-card fi fi-d2">
+              <div class="stat-num">5+</div>
+              <div class="stat-label">Platforms managed</div>
+            </div>
+            <div class="stat-card fi fi-d3">
+              <div class="stat-num">80%</div>
+              <div class="stat-label">Strategy adoption rate</div>
+            </div>
+            <div class="stat-card fi fi-d1">
+              <div class="stat-num">1.4K+</div>
+              <div class="stat-label">Campaign participants</div>
+            </div>
+          </div>
+          <div class="platform-card fi fi-d2">
+            <div class="platform-card-label">Platforms</div>
+            <div class="platform-tags">
+              <span class="ptag">Instagram</span>
+              <span class="ptag">TikTok</span>
+              <span class="ptag">Facebook</span>
+              <span class="ptag">Red Note&thinsp;小红书</span>
+              <span class="ptag">WeChat&thinsp;微信</span>
+              <span class="ptag">Weibo&thinsp;微博</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-intro fi">
+        <div class="section-label">Background</div>
+        <h2>Education &amp; Experience</h2>
+        <p>Academic training at Johns Hopkins combined with hands-on campaign, research, and content production roles across publishing, cultural consulting, and event marketing.</p>
+      </div>
+
+      <!-- Education -->
+      <div class="subsection-head"><h3>Education</h3></div>
+      <div class="edu-grid">
+        <div class="edu-card fi fi-d1">
+          <div class="edu-text">
+            <div class="edu-school">Johns Hopkins University</div>
+            <div class="edu-degree">MA in Communication</div>
+            <div class="edu-meta">
+              <span class="edu-gpa">GPA 3.97 / 4.0</span>
+              <span class="edu-year">2024 – 2026</span>
+            </div>
+          </div>
+          <div class="edu-img">
+            <img src="images/johns-hopkins-campus.jpg" alt="Johns Hopkins University campus" loading="lazy" />
+          </div>
+        </div>
+        <div class="edu-card fi fi-d2">
+          <div class="edu-text">
+            <div class="edu-school">Sun Yat-sen University</div>
+            <div class="edu-degree">Bachelor of Management<br>Exhibition Economy &amp; Management</div>
+            <div class="edu-meta">
+              <span class="edu-gpa">GPA 3.8 / 5.0</span>
+              <span class="edu-year">2020 – 2024</span>
+            </div>
+          </div>
+          <div class="edu-img">
+            <img src="images/sun-yat-sen-campus.jpg" alt="Sun Yat-sen University campus" loading="lazy" style="object-position: 50% 45%;" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="subsection-head"><h3>Work Experience</h3></div>
+      <div class="timeline">
+
+        <div class="tl-item fi">
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">
+                  <a href="https://www.sppub.com/" target="_blank" rel="noopener" class="tl-company-link">
+                    Sendpoints Publishing Co., Ltd
+                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="tl-role">Content Marketing Intern</div>
+              </div>
+              <div class="tl-date">Mar – Jul 2024</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Managed cross-platform editorial calendars (Instagram / RED / WeChat), driving 10% engagement growth</li>
+              <li>Authored 10+ WeChat long-form articles; owned end-to-end weekly newsletter production</li>
+              <li>Coordinated live communications for a 2,000-person art exhibition; collected real-time audience feedback</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item fi">
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">
+                  <a href="https://www.linkedin.com/company/rhizome-%E7%9D%BF%E4%B8%9B%E6%96%87%E5%8C%96/" target="_blank" rel="noopener" class="tl-company-link">
+                    Rhizome Cultural Consultancy
+                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="tl-role">Research Assistant Intern</div>
+              </div>
+              <div class="tl-date">Mar – Jul 2023</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Qualitative coding of 80,000+ words → audience segmentation reports for trend forecasting</li>
+              <li>Analyzed 20+ consumer datasets (health category); designed surveys and interview guides</li>
+              <li>Digital behavior research (Taobao / TikTok / RED) → e-commerce content strategy; 80% of recommendations adopted by management</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item fi">
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">
+                  <a href="https://www.facebook.com/StarryNightMulticulture/" target="_blank" rel="noopener" class="tl-company-link">
+                    Starry Night Cultural Heritage Fund
+                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="tl-role">Brand &amp; Education Content Coordinator</div>
+              </div>
+              <div class="tl-date">2022 – 2023</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Researched and edited 50+ cultural tourism education products (national curriculum aligned)</li>
+              <li>Led minority heritage policy analysis; authored rural education advocacy report for government partners</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item fi">
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">City Robinson Orienteering Game · 2022 Zhuhai Citizen Fitness Games</div>
+                <div class="tl-role">Marketing Management Coordinator</div>
+              </div>
+              <div class="tl-date">May 2022 – Jan 2023</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Produced 5 brand films (Premiere Pro + CapCut); managed cross-platform brand narrative across 5+ platforms</li>
+              <li>Led campaign narrative and visual design, reaching 1,400+ participants and a 20% exposure increase</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item fi">
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-company">Tianzige Volunteer Service Institution</div>
+                <div class="tl-role">Communication Volunteer</div>
+              </div>
+              <div class="tl-date">Apr 2021 – Dec 2022</div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Designed visual materials for 20+ public welfare events (public health campaigns and educational outreach) using Canva, Photoshop, and Procreate</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Course Projects -->
+      <div class="subsection-head"><h3>Course Projects</h3></div>
+      <div class="project-grid">
+
+        <div class="project-card fi fi-d1">
+          <div class="project-tag">Content Strategy · Social Media</div>
+          <div class="project-title">TED Social Media Content Manual</div>
+          <div class="project-meta">Jan – Apr 2026 &nbsp;·&nbsp; MA Communication, JHU</div>
+          <p class="project-desc">
+            Cross-platform strategy manual analyzing audience differences across Instagram, TikTok, and Facebook. Built a 3-month content calendar around TED Talks, including "Behind the Talks" and "TED Around Me" series, with SMART objectives and ROI evaluation framework.
+          </p>
+          <div class="project-foot">
+            <span class="badge">Top 5% in class</span>
+            <a href="https://canva.link/5jggqx3x4pu35dj" target="_blank" rel="noopener" class="link-arr">
+              View on Canva →
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card fi fi-d2">
+          <div class="project-tag">Campaign Design · Behavior Change</div>
+          <div class="project-title">Blue Jay Nights: A Campaign for Better Sleep</div>
+          <div class="project-meta">Jan – Apr 2025 &nbsp;·&nbsp; MA Communication, JHU</div>
+          <p class="project-desc">
+            Multi-channel behavior change campaign based on the Transtheoretical Model. Custom messaging for all five TTM stages; integrated "Goodnight Guide" email subscription, JHU Instagram (@jhuhop / @jhuwellbeing), and monthly offline workshops. All creative materials independently designed.
+          </p>
+          <div class="project-foot">
+            <span class="badge">Top 5% in class</span>
+            <button class="link-arr" onclick="openModal('pdfModal')">
+              View Sample →
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Academic Research -->
+      <div class="subsection-head"><h3>Academic Research</h3></div>
+      <div class="paper-list">
+
+        <div class="paper-item fi">
+          <div class="paper-num">01</div>
+          <div>
+            <div class="paper-venue">International Semiotics Conference 2023</div>
+            <div class="paper-title">Peircean Semiotic Analysis of Educational Exhibition Communication</div>
+            <div class="paper-desc">
+              Examined educational exhibition communication through a Peircean semiotic lens. Conducted 36 interviews (14 in-person + 22 online) and analyzed 103 visual materials, identifying three distinct patterns of communicative divergence in exhibition contexts.
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-item fi">
+          <div class="paper-num">02</div>
+          <div>
+            <div class="paper-venue">Tourism Science Annual Conference 2023</div>
+            <div class="paper-title">The Mediating Effect of Cultural Presence on Game Engagement and Travel Intention</div>
+            <div class="paper-desc">
+              Investigated how gamification affects travel intention with cultural presence as a mediating variable. Collected 333 questionnaires; validated mediation model through structural equation modeling in SPSS and Amos.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ PORTFOLIO ═══ -->
+  <section id="portfolio">
+    <div class="container">
+
+      <div class="section-intro fi">
+        <div class="section-label">Selected Work</div>
+        <h2>Portfolio</h2>
+        <p>Strategy playbooks, behavior-change campaigns, and brand video production.</p>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- TED Manual -->
+        <div class="work-card fi fi-d1">
+          <div class="work-thumb thumb-a">
+            <span class="thumb-emoji">📋</span>
+            <span class="thumb-pill">Canva · Interactive</span>
+          </div>
+          <div class="work-body">
+            <div class="work-type">Content Strategy · Social Media</div>
+            <div class="work-title">TED Social Media Content Manual</div>
+            <p class="work-desc">
+              Platform-specific strategies for Instagram, TikTok, and Facebook paired with a full 3-month editorial calendar, SMART goal-setting, and an ROI measurement framework. Ranked top 5% in class.
+            </p>
+            <div class="work-tags">
+              <span>Content Strategy</span>
+              <span>Editorial Calendar</span>
+              <span>TikTok</span>
+              <span>Instagram</span>
+              <span>ROI Framework</span>
+            </div>
+            <div class="work-actions">
+              <a href="https://canva.link/5jggqx3x4pu35dj" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                Open in Canva&nbsp;↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue Jay Nights -->
+        <div class="work-card fi fi-d2">
+          <div class="work-thumb thumb-b">
+            <span class="thumb-emoji">🌙</span>
+            <span class="thumb-pill">PDF · Campaign</span>
+          </div>
+          <div class="work-body">
+            <div class="work-type">Campaign · Behavior Change</div>
+            <div class="work-title">Blue Jay Nights｜Better Sleep Campaign</div>
+            <p class="work-desc">
+              Multi-channel behavior change campaign applying the Transtheoretical Model across five audience stages. Three-channel integration: email subscription, JHU Instagram, and offline monthly workshops. All creative assets independently produced. Top 5% in class.
+            </p>
+            <div class="work-tags">
+              <span>TTM</span>
+              <span>Campaign Design</span>
+              <span>Email Marketing</span>
+              <span>Creative Direction</span>
+            </div>
+            <div class="work-actions">
+              <button class="btn btn-primary btn-sm" onclick="openModal('pdfModal')">
+                View Sample PDF
+              </button>
+              <!-- TODO: add blue-jay-nights.pdf to this folder and enable the embed -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="work-card fi fi-d3">
+          <div class="work-thumb thumb-c">
+            <span class="thumb-emoji">🎬</span>
+            <span class="thumb-pill">Video · 49 sec</span>
+          </div>
+          <div class="work-body">
+            <div class="work-type">Video Production · Brand Campaign</div>
+            <div class="work-title">Zhuhai Fitness Games｜Brand Film</div>
+            <p class="work-desc">
+              Stop-motion brand film produced in Premiere Pro and CapCut for the 2022 Zhuhai City Robinson Orienteering campaign. Part of a multi-platform visual narrative that attracted 1,400+ participants and increased brand exposure by 20%.
+            </p>
+            <div class="work-tags">
+              <span>Premiere Pro</span>
+              <span>CapCut</span>
+              <span>Brand Film</span>
+              <span>Stop-Motion</span>
+            </div>
+            <div class="work-actions">
+              <button class="btn btn-primary btn-sm" onclick="openVideoModal('rc-xc4VhKSI','Zhuhai Fitness Games｜Brand Film (49 sec)')">
+                Watch Film
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documentary -->
+        <div class="work-card fi fi-d1">
+          <div class="work-thumb thumb-d">
+            <span class="thumb-emoji">🎥</span>
+            <span class="thumb-pill">Documentary · Video</span>
+          </div>
+          <div class="work-body">
+            <div class="work-type">Documentary · Entertainment Planning</div>
+            <div class="work-title">Art Field Nanhai Guangdong｜<em>Germinating</em></div>
+            <p class="work-desc">
+              Planned documentary topics, created shooting outlines, and developed interview guidelines in collaboration with a production team. Produced 20,000+ words of research content through online/offline fieldwork and brainstorming. Edited and refined the final cut using Premiere Pro and Audition to enhance visual effects and audio quality.
+            </p>
+            <div class="work-tags">
+              <span>Documentary</span>
+              <span>Editorial Planning</span>
+              <span>Premiere Pro</span>
+              <span>Audition</span>
+              <span>Field Research</span>
+            </div>
+            <div class="work-actions">
+              <button class="btn btn-primary btn-sm" onclick="openVideoModal('Sx4h0m2iI0g','Art Field Nanhai Guangdong｜Germinating')">
+                Watch Documentary
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-intro fi">
+        <div class="section-label">Capabilities</div>
+        <h2>Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-cat fi fi-d1">
+          <div class="skill-cat-head">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3" width="13" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M5 8h6M8 5.5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="skill-cat-name">Digital &amp; Design</div>
+          </div>
+          <div class="skill-tags">
+            <span class="stag">Canva</span>
+            <span class="stag">Photoshop</span>
+            <span class="stag">Illustrator</span>
+            <span class="stag">Premiere Pro</span>
+            <span class="stag">Procreate</span>
+            <span class="stag">Power BI</span>
+            <span class="stag">Microsoft Office</span>
+          </div>
+        </div>
+
+        <div class="skill-cat fi fi-d2">
+          <div class="skill-cat-head">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5z" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M1.5 8h13M8 1.5a10 10 0 000 13M8 1.5a10 10 0 010 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="skill-cat-name">Communications</div>
+          </div>
+          <div class="skill-tags">
+            <span class="stag">Cross-Platform Content Strategy</span>
+            <span class="stag">Editorial Calendar Management</span>
+            <span class="stag">Campaign Management</span>
+            <span class="stag">Video Editing</span>
+            <span class="stag">Email Newsletters</span>
+            <span class="stag">Brand Storytelling</span>
+          </div>
+        </div>
+
+        <div class="skill-cat fi fi-d1">
+          <div class="skill-cat-head">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 12.5l3.5-4 2.5 2.5 3-4 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="1" y="1.5" width="14" height="13" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+              </svg>
+            </div>
+            <div class="skill-cat-name">Research &amp; Analytics</div>
+          </div>
+          <div class="skill-tags">
+            <span class="stag">Qualitative Coding</span>
+            <span class="stag">Audience Segmentation</span>
+            <span class="stag">Survey Design</span>
+            <span class="stag">SPSS / Amos / Mplus</span>
+            <span class="stag">Python</span>
+            <span class="stag">Structural Equation Modeling</span>
+            <span class="stag">Data-Driven Storytelling</span>
+          </div>
+        </div>
+
+        <div class="skill-cat fi fi-d2">
+          <div class="skill-cat-head">
+            <div class="skill-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 2v3M8 11v3M2 8h3M11 8h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.4"/>
+              </svg>
+            </div>
+            <div class="skill-cat-name">Languages</div>
+          </div>
+          <div class="skill-tags">
+            <span class="stag">English · Fluent</span>
+            <span class="stag">Mandarin 普通话 · Native</span>
+          </div>
+          <div class="lang-row">
+            <div>
+              <div class="lang-item-name">English</div>
+              <div class="lang-item-level">Fluent · Academic &amp; Professional</div>
+            </div>
+            <div>
+              <div class="lang-item-name">普通话 · Mandarin</div>
+              <div class="lang-item-level">Native · Content Production</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CONTACT / FOOTER ═══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="cl fi">
+          <div class="section-label" style="color:rgba(255,255,255,0.35)">Get in touch</div>
+          <h2>Let's work together</h2>
+          <p>
+            Open to full-time roles and internships in content strategy, brand
+            communications, cross-cultural marketing, and audience research,
+            especially at companies bridging Chinese and English-speaking markets.
+          </p>
+          <div class="ci-list">
+            <div class="ci-item">
+              <div class="ci-icon">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <rect x=".75" y="2.75" width="13.5" height="9.5" rx=".75" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M.75 4l6.75 4.5L14.25 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="ci-text">
+                <a href="mailto:caoqianqian5@gmail.com">caoqianqian5@gmail.com</a>
+                <span class="ci-sep">·</span>
+                <a href="mailto:qcao18@jh.edu">qcao18@jh.edu</a>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" aria-hidden="true">
+                  <path d="M12.917.625H2.083C1.254.625.625 1.254.625 2.083v10.834c0 .829.629 1.458 1.458 1.458h10.834c.829 0 1.458-.629 1.458-1.458V2.083c0-.829-.629-1.458-1.458-1.458zM5.208 11.25H3.542V5.625h1.666v5.625zM4.375 4.791a.96.96 0 110-1.916.96.96 0 010 1.916zm7.083 6.459H9.792V8.229c0-.702-.638-1.27-1.354-1.27-.716 0-1.354.568-1.354 1.27V11.25H5.417V5.625h1.667v.78a2.374 2.374 0 011.708-.697c1.355 0 2.666 1.14 2.666 2.52v2.897-2.875z"/>
+                </svg>
+              </div>
+              <div class="ci-text">
+                <a href="https://www.linkedin.com/in/qianqiancao-cate/" target="_blank" rel="noopener">
+                  linkedin.com/in/qianqiancao-cate
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr fi fi-d2">
+          <h3>Download Resume</h3>
+          <div class="dl-cards">
+            <!-- TODO: place resume PDFs in this folder, then update href values below -->
+            <a href="resume-full.pdf" class="dl-card" download>
+              <div>
+                <div class="dl-card-name">Full Resume</div>
+                <div class="dl-card-sub">Complete work history &nbsp;·&nbsp; PDF</div>
+              </div>
+              <div class="dl-card-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 2.25v10.5M4.5 9l4.5 4.5 4.5-4.5M3 14.25h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </a>
+            <a href="resume-short.pdf" class="dl-card" download>
+              <div>
+                <div class="dl-card-name">One-Page Resume</div>
+                <div class="dl-card-sub">Condensed highlight version &nbsp;·&nbsp; PDF</div>
+              </div>
+              <div class="dl-card-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 2.25v10.5M4.5 9l4.5 4.5 4.5-4.5M3 14.25h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <h3>Connect</h3>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/qianqiancao-cate/" target="_blank" rel="noopener" class="social-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+                <path d="M12.25.875H1.75C1.266.875.875 1.266.875 1.75v10.5c0 .484.391.875.875.875h10.5c.484 0 .875-.391.875-.875V1.75c0-.484-.391-.875-.875-.875zm-7.875 10.5H3.063V5.25h1.312v6.125zm-.656-6.97a.766.766 0 110-1.533.766.766 0 010 1.533zm7.656 6.97H9.063V8.313c0-.61-.021-1.395-.85-1.395-.852 0-.982.665-.982 1.352v3.105H5.918V5.25h1.26v.836h.018c.176-.333.604-.683 1.243-.683 1.33 0 1.575.875 1.575 2.013v3.959z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="mailto:caoqianqian5@gmail.com" class="social-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <rect x=".875" y="2.625" width="12.25" height="8.75" rx=".625" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M.875 3.5L7 7.875 13.125 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Email
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bar">
+        <p>© 2026 Qianqian Cao (Cate). All rights reserved.</p>
+        <p>Johns Hopkins University · MA Communication · Baltimore, MD</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ PDF MODAL ═══ -->
+  <div class="modal-overlay" id="pdfModal" role="dialog" aria-modal="true" aria-label="Blue Jay Nights Campaign Sample">
+    <div class="modal-box modal-pdf">
+      <div class="modal-head">
+        <span>Blue Jay Nights: Campaign Sample Excerpt</span>
+        <button class="modal-close" onclick="closeModal('pdfModal')" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <embed src="blue-jay-nights.pdf" type="application/pdf" width="100%" height="100%" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VIDEO MODAL ═══ -->
+  <div class="modal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Zhuhai Fitness Games Brand Film">
+    <div class="modal-box modal-vid">
+      <div class="modal-head modal-head-dark">
+        <span id="videoModalTitle">Video</span>
+        <button class="modal-close" onclick="closeVideoModal()" aria-label="Close">✕</button>
+      </div>
+      <div style="display:block;padding:0">
+        <iframe
+          id="videoFrame"
+          width="100%" height="100%"
+          src=""
+          title=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="aspect-ratio:16/9; display:block; width:100%"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button class="sound-btn" id="soundToggle" aria-label="Mute sounds" title="Toggle string sounds">
+    <svg class="snd-on" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+      <path d="M1.5 5.25h2.25L7.5 2.25v10.5l-3.75-3H1.5V5.25z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M10 5c.9.8 1.5 1.8 1.5 3S10.9 10.2 10 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M12 3c1.5 1.3 2.4 2.9 2.4 4.5S13.5 11.7 12 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <svg class="snd-off" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true" style="display:none">
+      <path d="M1.5 5.25h2.25L7.5 2.25v10.5l-3.75-3H1.5V5.25z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M10 5.5l3.5 4M13.5 5.5l-3.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+  <script>
+    /* ── Navbar scroll state ── */
+    const navbar      = document.getElementById('navbar');
+    const backTop     = document.getElementById('backTop');
+    const soundToggle = document.getElementById('soundToggle');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      navbar.classList.toggle('scrolled', y > 20);
+      backTop.classList.toggle('show', y > 500);
+      soundToggle.classList.toggle('show', y > 500);
+      highlightNav();
+    }, { passive: true });
+
+    /* ── Active nav link ── */
+    const sections = ['hero','about','experience','portfolio','skills','contact'];
+    function highlightNav() {
+      let current = '';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 80) current = id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+      });
+    }
+
+    /* ── Mobile hamburger ── */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+
+    /* ── Modals ── */
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function openVideoModal(videoId, title) {
+      document.getElementById('videoModalTitle').textContent = title;
+      document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+      openModal('videoModal');
+    }
+    function closeVideoModal() {
+      document.getElementById('videoFrame').src = '';
+      closeModal('videoModal');
+    }
+
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => {
+        if (e.target === m) {
+          if (m.id === 'videoModal') closeVideoModal();
+          else closeModal(m.id);
+        }
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (document.getElementById('videoModal').classList.contains('open')) closeVideoModal();
+        document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+      }
+    });
+
+    /* ── Fade-in on scroll ── */
+    function reveal() {
+      document.querySelectorAll('.fi:not(.on)').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 56) {
+          el.classList.add('on');
+        }
+      });
+    }
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('load', reveal);
+    setTimeout(reveal, 120);
+
+    /* ── Bead curtain — SVG flex-string physics ── */
+    let soundPluck = null;
+
+    (function () {
+      const stage = document.querySelector('.hanging-stage');
+      if (!stage) return;
+
+      const units  = Array.from(stage.querySelectorAll('.hang-unit'));
+      const N      = units.length;
+      const svgs   = units.map(u => u.querySelector('.hang-svg'));
+      const paths  = units.map(u => u.querySelector('.hang-path'));
+      const glyphs = units.map(u => u.querySelector('.hang-glyph'));
+
+      const lhArr = units.map(u =>
+        parseFloat(getComputedStyle(u).getPropertyValue('--lh').trim()) || 220
+      );
+      svgs.forEach((svg, i) => {
+        const lh = lhArr[i];
+        svg.setAttribute('width',   '40');
+        svg.setAttribute('height',  lh);
+        svg.setAttribute('viewBox', `-20 0 40 ${lh}`);
+        paths[i].setAttribute('d', `M0,0 Q0,${lh / 2} 0,${lh}`);
+      });
+
+      const state     = units.map(() => ({ bend: 0, vel: 0, target: 0 }));
+      const lastPluck = new Array(N).fill(0);
+
+      const STIFFNESS = 0.040;
+      const DAMPING   = 0.068;
+      const MAX_BEND  = 16;
+      const RADIUS    = 145;
+      const COUPLING  = 0.12;
+
+      let raf    = null;
+      let active = false;
+
+      function updateUnit(i) {
+        const b  = state[i].bend;
+        const lh = lhArr[i];
+        paths[i].setAttribute('d', `M0,0 Q${b},${lh / 2} ${b * 0.46},${lh}`);
+        glyphs[i].style.transform = b ? `translateX(${b * 0.46}px)` : '';
+      }
+
+      function step() {
+        let moving = false;
+        for (let i = 0; i < N; i++) {
+          const s = state[i];
+          let nbr = 0, cnt = 0;
+          if (i > 0)     { nbr += state[i - 1].bend; cnt++; }
+          if (i < N - 1) { nbr += state[i + 1].bend; cnt++; }
+          const pull = cnt ? (nbr / cnt) * COUPLING : 0;
+          const acc = STIFFNESS * (s.target + pull - s.bend) - DAMPING * s.vel;
+          s.vel  += acc;
+          s.bend += s.vel;
+          const settled = !active &&
+            Math.abs(s.bend - s.target) < 0.04 && Math.abs(s.vel) < 0.04;
+          if (settled && s.target === 0) {
+            s.bend = 0; s.vel = 0;
+            paths[i].setAttribute('d', `M0,0 Q0,${lhArr[i] / 2} 0,${lhArr[i]}`);
+            glyphs[i].style.transform = '';
+          } else {
+            updateUnit(i);
+            if (!settled) moving = true;
+          }
+        }
+        raf = (moving || active) ? requestAnimationFrame(step) : null;
+      }
+
+      function go() { if (!raf) raf = requestAnimationFrame(step); }
+
+      stage.addEventListener('mousemove', e => {
+        active = true;
+        const now = performance.now();
+        units.forEach((unit, i) => {
+          const rect = unit.getBoundingClientRect();
+          const dx   = e.clientX - (rect.left + rect.width / 2);
+          const dist = Math.abs(dx);
+          const prev = state[i].target;
+          state[i].target = (dist > 0 && dist < RADIUS)
+            ? (dx / dist) * (1 - dist / RADIUS) * MAX_BEND
+            : 0;
+          if (Math.abs(state[i].target) > 2 && Math.abs(prev) < 2 &&
+              now - lastPluck[i] > 220) {
+            lastPluck[i] = now;
+            soundPluck && soundPluck(i, Math.abs(state[i].target) / MAX_BEND);
+          }
+        });
+        go();
+      }, { passive: true });
+
+      stage.addEventListener('mouseleave', () => {
+        active = false;
+        state.forEach(s => { s.target = 0; });
+        go();
+      });
+    })();
+
+    /* ── String pluck sounds — Web Audio API synthesis ── */
+    ;(function () {
+      let ctx = null;
+      let on  = true;
+
+      /* C major pentatonic across 2.5 octaves — any combination sounds harmonious */
+      const NOTES = [261.63, 293.66, 329.63, 392.00, 440.00,
+                     523.25, 587.33, 659.25, 784.00, 880.00, 1046.50];
+
+      function ensure() {
+        if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+        if (ctx.state === 'suspended') ctx.resume();
+      }
+
+      function pluck(idx, vel) {
+        if (!on || !ctx) return;
+        const freq = NOTES[Math.min(idx, NOTES.length - 1)];
+        const t0   = ctx.currentTime;
+        const amp  = 0.10 + (vel || 0.5) * 0.08;
+
+        const master = ctx.createGain();
+        master.gain.value = amp;
+        master.connect(ctx.destination);
+
+        const filt = ctx.createBiquadFilter();
+        filt.type = 'lowpass';
+        filt.frequency.value = freq * 5;
+        filt.Q.value = 0.7;
+        filt.connect(master);
+
+        /* fundamental + harmonics — higher partials decay faster (pluck character) */
+        [[1, 0.80, 0.44], [2, 0.28, 0.22], [3, 0.10, 0.13], [5, 0.04, 0.08]]
+          .forEach(([h, a, d]) => {
+            const osc = ctx.createOscillator();
+            const g   = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq * h;
+            g.gain.setValueAtTime(a, t0);
+            g.gain.exponentialRampToValueAtTime(0.0001, t0 + d);
+            osc.connect(g);
+            g.connect(filt);
+            osc.start(t0);
+            osc.stop(t0 + d + 0.02);
+          });
+      }
+
+      soundPluck = function (idx, vel) { ensure(); pluck(idx, vel); };
+
+      const btn = document.getElementById('soundToggle');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        on = !on;
+        btn.classList.toggle('muted', !on);
+        btn.setAttribute('aria-label', on ? 'Mute sounds' : 'Enable sounds');
+        btn.querySelector('.snd-on').style.display  = on ? '' : 'none';
+        btn.querySelector('.snd-off').style.display = on ? 'none' : '';
+      });
+    })();
+  </script>
+
+</body>
+</html>
