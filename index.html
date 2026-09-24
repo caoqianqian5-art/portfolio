@@ -15,25 +15,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #F7F3EC;
+      --bg:           #EEF3F8;
       --surface:      #FFFFFF;
-      --surface-alt:  #F0E9DC;
-      --text:         #1B1A18;
-      --text-muted:   #68655F;
-      --text-light:   #9A9690;
-      --accent:       #D4641A;
-      --accent-dark:  #A84E14;
-      --accent-light: #F5E8D5;
-      --border:       #E8DDD0;
-      --border-lt:    #F0E8DC;
-      --tag-bg:       #F0E8DC;
+      --surface-alt:  #E2EBF6;
+      --text:         #0F1A2E;
+      --text-muted:   #4A5872;
+      --text-light:   #8A9AB8;
+      --accent:       #2B6CB0;
+      --accent-dark:  #1A4E8A;
+      --accent-light: #DBE9F7;
+      --border:       #C8D8EE;
+      --border-lt:    #D8E6F4;
+      --tag-bg:       #DBE9F7;
       --font:         'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --max-w:        1100px;
       --pad-section:  5rem;
       --radius:       8px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font);
       background: var(--bg);
@@ -41,6 +41,7 @@
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; max-width: 100%;
     }
 
     /* ─── Typography ─── */
@@ -104,7 +105,7 @@
     /* ─── Navigation ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(247, 243, 236, 0.92);
+      background: rgba(238, 243, 248, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid transparent;
@@ -180,7 +181,7 @@
       cursor: default;
     }
     .hang-svg { overflow: visible; display: block; flex-shrink: 0; }
-    .hang-path { stroke: #C8BFB0; stroke-width: 1.2px; fill: none; stroke-linecap: round; }
+    .hang-path { stroke: #B0C4DC; stroke-width: 1.2px; fill: none; stroke-linecap: round; }
     .hang-glyph {
       font-size: clamp(1.875rem, 4.5vw, 2.75rem);
       color: var(--text); line-height: 1; margin-top: 3px;
@@ -208,9 +209,9 @@
     .hero-down-link:hover { color: var(--accent); }
 
     .about-name {
-      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
-      letter-spacing: -0.01em; color: var(--text);
-      margin-bottom: 1rem; line-height: 1.3;
+      font-size: clamp(1.875rem, 3.75vw, 2.5rem);
+      letter-spacing: -0.015em; color: var(--text);
+      margin-bottom: 1rem; line-height: 1.2;
     }
     .about-name-sep { color: var(--text-light); margin: 0 0.35rem; }
     .about-name .name-en { font-family: 'Caveat', cursive; font-weight: 700; letter-spacing: 0; }
@@ -219,8 +220,8 @@
     #about { background: var(--surface); }
 
     .hero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
+      display: grid; grid-template-columns: 11fr 9fr;
+      gap: 4rem; align-items: start;
     }
 
     .hero-eyebrow {
@@ -267,7 +268,7 @@
       font-size: 1.875rem; font-weight: 700; color: var(--text);
       letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.3rem;
     }
-    .stat-label { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.4; }
+    .stat-label { font-size: 0.875rem; color: var(--text-muted); line-height: 1.4; }
 
     .platform-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -279,14 +280,14 @@
     }
     .platform-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .ptag {
-      font-size: 0.8125rem; font-weight: 500; color: var(--text-muted);
+      font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
       background: var(--tag-bg); padding: 0.3rem 0.75rem; border-radius: 100px;
     }
 
     .hero-contact { display: flex; flex-wrap: wrap; gap: 1.25rem; }
     .hc-item {
       display: flex; align-items: center; gap: 0.4rem;
-      font-size: 0.8125rem; color: var(--text-muted);
+      font-size: 0.875rem; color: var(--text-muted);
     }
     .hc-item a { transition: color 0.18s; }
     .hc-item a:hover { color: var(--accent); }
@@ -309,7 +310,7 @@
     .edu-card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(90, 46, 18, 0.10);
+      box-shadow: 0 8px 24px rgba(15, 40, 90, 0.10);
     }
     .edu-text { flex: 1; padding: 1.625rem; }
     .edu-img { flex-shrink: 0; }
@@ -329,11 +330,11 @@
       margin-top: 1rem;
     }
     .edu-gpa {
-      font-size: 0.8125rem; font-weight: 600; color: var(--accent);
+      font-size: 0.875rem; font-weight: 600; color: var(--accent);
       background: var(--accent-light); padding: 0.25rem 0.625rem; border-radius: 4px;
       transition: color 0.25s ease, background 0.25s ease;
     }
-    .edu-year { font-size: 0.8125rem; color: var(--text-light); }
+    .edu-year { font-size: 0.875rem; color: var(--text-light); }
 
     /* Timeline */
     .timeline { display: flex; flex-direction: column; }
@@ -358,7 +359,7 @@
     .tl-card:hover {
       background: var(--surface-alt); border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(90, 46, 18, 0.08);
+      box-shadow: 0 6px 18px rgba(15, 40, 90, 0.08);
     }
     .tl-card:hover .tl-company     { font-size: 1.125rem; font-weight: 800; }
     .tl-card:hover .tl-company-link { font-size: 1.125rem; font-weight: 800; }
@@ -376,7 +377,7 @@
     .ext-icon { opacity: 0.4; transition: opacity 0.18s ease; flex-shrink: 0; }
     .tl-company-link:hover .ext-icon { opacity: 0.85; }
     .tl-role { font-size: 1rem; color: var(--accent); font-weight: 700; margin-bottom: 0.625rem; transition: color 0.25s ease; }
-    .tl-date { font-size: 0.8125rem; color: var(--text-light); white-space: nowrap; flex-shrink: 0; transition: color 0.25s ease; }
+    .tl-date { font-size: 0.875rem; color: var(--text-light); white-space: nowrap; flex-shrink: 0; transition: color 0.25s ease; }
     .tl-bullets { display: flex; flex-direction: column; gap: 0.35rem; }
     .tl-bullets li {
       font-size: 0.875rem; color: var(--text-muted); line-height: 1.65;
@@ -397,16 +398,16 @@
       text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
     }
     .project-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.375rem; }
-    .project-meta { font-size: 0.8125rem; color: var(--text-light); margin-bottom: 0.75rem; }
-    .project-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
+    .project-meta { font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.75rem; }
+    .project-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
     .project-foot { display: flex; justify-content: space-between; align-items: center; }
     .badge {
-      font-size: 0.75rem; font-weight: 600; color: var(--accent);
+      font-size: 0.875rem; font-weight: 600; color: var(--accent);
       background: var(--accent-light); padding: 0.25rem 0.625rem; border-radius: 4px;
     }
     .link-arr {
       display: inline-flex; align-items: center; gap: 0.375rem;
-      font-size: 0.8125rem; font-weight: 500; color: var(--accent); transition: gap 0.18s;
+      font-size: 0.875rem; font-weight: 500; color: var(--accent); transition: gap 0.18s;
     }
     .link-arr:hover { gap: 0.625rem; }
 
@@ -428,7 +429,7 @@
       text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
     }
     .paper-title { font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
-    .paper-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.65; }
+    .paper-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
 
     /* ─── Portfolio ─── */
     #portfolio { background: var(--bg); }
@@ -447,7 +448,7 @@
     .work-card:hover {
       transform: translateY(-4px);
       border-color: var(--border);
-      box-shadow: 0 12px 32px rgba(90, 46, 18, 0.10);
+      box-shadow: 0 12px 32px rgba(15, 40, 90, 0.10);
     }
     .work-title { transition: font-size 0.2s ease, font-weight 0.15s; }
     .work-card:hover .work-title { font-size: 1.3125rem; font-weight: 800; }
@@ -456,33 +457,35 @@
       height: 176px; display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
-    .thumb-a { background: #D4EADE; }
-    .thumb-b { background: #DDD8EE; }
-    .thumb-c { background: #CCE2F0; }
-    .thumb-d { background: #EEEAD0; }
+    .thumb-a { background: #C0182A; }
+    .thumb-b { background: #1A1048; }
+    .thumb-c { background: #0F6E62; }
+    .thumb-d { background: #7A4A1E; }
 
-    .thumb-emoji { font-size: 2.25rem; opacity: 0.55; transition: transform 0.25s ease, opacity 0.25s ease; }
-    .work-card:hover .thumb-emoji { transform: scale(1.45); opacity: 0.80; }
+    .thumb-emoji { font-size: 4rem; opacity: 0.72; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .work-card:hover .thumb-emoji { transform: scale(1.5); opacity: 0.90; }
+    .work-thumb.thumb-b .thumb-pill { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); }
+    .work-thumb.thumb-b .thumb-emoji { opacity: 0.76; }
     .thumb-pill {
       position: absolute; top: 0.75rem; left: 0.75rem;
-      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.07em;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em;
       text-transform: uppercase; color: var(--text-muted);
       background: rgba(255,255,255,0.82); padding: 0.3rem 0.625rem; border-radius: 4px;
     }
 
     .work-body { padding: 1.375rem; flex: 1; display: flex; flex-direction: column; }
     .work-type {
-      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
     }
     .work-title {
       font-size: 1.0625rem; font-weight: 700; color: var(--text);
       margin-bottom: 0.625rem; line-height: 1.35;
     }
-    .work-desc { font-size: 0.8375rem; color: var(--text-muted); line-height: 1.7; flex: 1; margin-bottom: 1.125rem; }
+    .work-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; flex: 1; margin-bottom: 1.125rem; }
     .work-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: 1.125rem; }
     .work-tags span {
-      font-size: 0.75rem; color: var(--text-muted);
+      font-size: 0.875rem; color: var(--text-muted);
       background: var(--tag-bg); padding: 0.25rem 0.625rem; border-radius: 100px;
     }
     .work-actions { display: flex; gap: 0.625rem; flex-wrap: wrap; }
@@ -504,7 +507,7 @@
     .skill-cat-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .stag {
-      font-size: 0.9rem; color: var(--text-muted);
+      font-size: 0.9375rem; color: var(--text-muted);
       border: 1px solid var(--border); background: var(--surface);
       padding: 0.375rem 0.875rem; border-radius: 4px; transition: all 0.18s;
     }
@@ -515,10 +518,10 @@
       padding-top: 1.125rem; display: flex; gap: 2.5rem;
     }
     .lang-item-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
-    .lang-item-level { font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .lang-item-level { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.2rem; }
 
     /* ─── Contact / Footer ─── */
-    #contact { background: #1C1510; padding: 4.5rem 0 0; }
+    #contact { background: #0E1F3C; padding: 4.5rem 0 0; }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 
@@ -547,7 +550,7 @@
     }
     .dl-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); }
     .dl-card-name { font-size: 0.9375rem; font-weight: 500; color: #fff; margin-bottom: 0.2rem; }
-    .dl-card-sub { font-size: 0.8125rem; color: rgba(255,255,255,0.38); }
+    .dl-card-sub { font-size: 0.875rem; color: rgba(255,255,255,0.38); }
     .dl-card-icon { color: rgba(255,255,255,0.45); }
 
     .social-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
@@ -564,7 +567,7 @@
       border-top: 1px solid rgba(255,255,255,0.07);
       display: flex; justify-content: space-between; align-items: center;
     }
-    .footer-bar p { font-size: 0.8125rem; color: rgba(255,255,255,0.28); }
+    .footer-bar p { font-size: 0.875rem; color: rgba(255,255,255,0.28); }
 
     /* ─── Modals ─── */
     .modal-overlay {
@@ -652,6 +655,190 @@
     .fi-d2 { transition-delay: 0.1s; }
     .fi-d3 { transition-delay: 0.15s; }
 
+    /* ─── About: 2-column full-width layout ─── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 26fr 74fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .about-photo-col { /* left column */ }
+    .about-photo-sq {
+      width: 100%; aspect-ratio: 3 / 4;
+      border-radius: 12px; overflow: hidden;
+      border: 2px solid var(--border);
+    }
+    .about-photo-sq img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
+    }
+    .about-text-col { min-width: 0; }
+
+    /* ─── About: chips ─── */
+    .about-chips { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+    .about-chip {
+      font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
+      background: var(--tag-bg); border: 1px solid var(--border);
+      padding: 0.3rem 0.875rem; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* ─── About: emoji paragraphs ─── */
+    .about-paras { margin-bottom: 1.75rem; }
+    .about-para {
+      display: flex; gap: 0.625rem; align-items: flex-start;
+      margin-bottom: 1.125rem;
+    }
+    .about-para:last-child { margin-bottom: 0; }
+    .about-para-em { font-size: 1rem; line-height: 1.75; flex-shrink: 0; margin-top: 0.06rem; }
+    .about-para p { margin: 0; font-size: 0.9375rem; line-height: 1.75; }
+
+    /* ─── Tools marquee ─── */
+    .tools-marquee-outer {
+      margin-top: 2.75rem; padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .tools-marquee-label {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 1rem;
+    }
+    .tools-marquee-clip { overflow: hidden; position: relative; }
+    .tools-marquee-clip::before,
+    .tools-marquee-clip::after {
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: 3rem; z-index: 2; pointer-events: none;
+    }
+    .tools-marquee-clip::before { left:  0; background: linear-gradient(to right, var(--surface), transparent); }
+    .tools-marquee-clip::after  { right: 0; background: linear-gradient(to left,  var(--surface), transparent); }
+    .tools-marquee-track {
+      display: flex; align-items: center;
+      width: max-content;
+      animation: tools-scroll 34s linear infinite;
+    }
+    .tools-marquee-clip:hover .tools-marquee-track { animation-play-state: paused; }
+    @keyframes tools-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-33.333%); }
+    }
+    .tool-chip {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 3.25rem; white-space: nowrap;
+    }
+    .tool-ico {
+      width: 30px; height: 30px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.625rem; font-weight: 800; color: #fff;
+      letter-spacing: -0.01em; flex-shrink: 0;
+    }
+    .tool-lbl { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); }
+    .tool-vsep { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
+
+    /* ─── Work: expandable job list ─── */
+    .job-list { display: flex; flex-direction: column; }
+    .job-row { border-bottom: 1px solid var(--border-lt); cursor: pointer; }
+    .job-row:first-child { border-top: 1px solid var(--border-lt); }
+    .job-summary {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 1rem; padding: 1rem 0;
+    }
+    .job-left { flex: 1; min-width: 0; }
+    .job-title-line {
+      display: flex; align-items: baseline; flex-wrap: wrap;
+      font-size: 1.375rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem;
+    }
+    .job-company { color: var(--text); font-weight: 800; transition: color 0.18s; }
+    .job-row:hover .job-company { color: var(--accent); }
+    .job-sep-dash { color: var(--text-light); font-weight: 400; margin: 0 0.35rem; font-size: 1.125rem; }
+    .job-role { color: var(--text-muted); font-weight: 400; font-size: 1.125rem; }
+    .job-date { font-size: 0.875rem; color: var(--text-light); }
+    .job-right { display: flex; align-items: center; gap: 0.625rem; flex-shrink: 0; padding-top: 0.15rem; }
+    .job-industry-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; justify-content: flex-end; }
+    .job-industry-tags span {
+      font-size: 0.8125rem; font-weight: 500; color: var(--text-light);
+      background: var(--tag-bg); padding: 0.25rem 0.625rem; border-radius: 100px;
+      white-space: nowrap;
+    }
+    .job-chevron { flex-shrink: 0; color: var(--text-light); transition: transform 0.25s ease; }
+    .job-row.open .job-chevron { transform: rotate(180deg); }
+    .job-details { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .job-row.open .job-details { max-height: 500px; }
+    .job-bullets { padding: 0.25rem 0 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .job-bullets li {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.65;
+      padding-left: 1rem; position: relative;
+    }
+    .job-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--text-light); }
+
+    /* ─── Venn "This is me" — full-width animation block ─── */
+    .venn-block { margin-top: 3rem; }
+    .venn-wrap {
+      position: relative; width: 100%; height: 420px;
+      background: var(--surface); isolation: isolate;
+    }
+    .venn-circle {
+      position: absolute; width: 170px; height: 170px; border-radius: 50%;
+      top: calc(50% - 85px); left: calc(50% - 85px);
+      mix-blend-mode: multiply;
+      display: flex;
+      font-family: 'Caveat', cursive; font-weight: 700; font-style: normal;
+      font-size: 1.375rem; color: rgba(10,30,65,0.82);
+      letter-spacing: 0.01em; text-align: center; line-height: 1.2;
+      user-select: none; will-change: transform;
+    }
+    .vc-1 { background: #B8D4EC; transform: translate(-75px, -90px); align-items: flex-start; justify-content: flex-start; padding: 18px 0 0 18px; }
+    .vc-2 { background: #9ED4C4; transform: translate(75px, -90px); align-items: flex-start; justify-content: flex-end; padding: 18px 18px 0 0; }
+    .vc-3 { background: #C8B8E0; transform: translate(0, 108px); align-items: flex-end; justify-content: center; padding: 0 0 18px; }
+    .venn-center-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Caveat', cursive; font-weight: 700; font-style: normal;
+      font-size: 1.625rem; color: #fff;
+      letter-spacing: 0.04em;
+      text-shadow: 0 1px 6px rgba(0,20,70,0.65);
+      opacity: 0; pointer-events: none; z-index: 10; white-space: nowrap;
+    }
+
+    /* ─── About bio wrapper (legacy, kept for possible reuse) ─── */
+    .about-bio { max-width: 680px; }
+
+    /* ─── Platform logo marquee ─── */
+    .plat-marquee-outer {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.125rem 1.375rem;
+      overflow: hidden; margin-top: 3rem;
+    }
+    .plat-marquee-label {
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 0.75rem;
+    }
+    .plat-marquee-clip {
+      overflow: hidden; position: relative; width: 100%;
+    }
+    .plat-marquee-clip::before,
+    .plat-marquee-clip::after {
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: 1.5rem; z-index: 2; pointer-events: none;
+    }
+    .plat-marquee-clip::before { left:  0; background: linear-gradient(to right, var(--surface), transparent); }
+    .plat-marquee-clip::after  { right: 0; background: linear-gradient(to left,  var(--surface), transparent); }
+    .plat-marquee-track {
+      display: flex; align-items: center;
+      width: max-content;
+      animation: plat-scroll 24s linear infinite;
+    }
+    .plat-marquee-clip:hover .plat-marquee-track { animation-play-state: paused; }
+    @keyframes plat-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-33.333%); }
+    }
+    .plat-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.25rem 1.25rem; white-space: nowrap;
+    }
+    .plat-icon { width: 28px; height: 28px; flex-shrink: 0; border-radius: 6px; object-fit: cover; display: block; }
+    .plat-name { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); }
+    .plat-vsep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+
     /* ─── Responsive ─── */
     @media (max-width: 900px) {
       :root { --pad-section: 3.5rem; }
@@ -662,6 +849,8 @@
       .hero-right { order: -1; }
       .stat-grid { grid-template-columns: repeat(4, 1fr); }
 
+      .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .about-photo-sq { max-width: 220px; }
       .edu-grid { grid-template-columns: 1fr; }
       .project-grid { grid-template-columns: 1fr; }
       .work-grid { grid-template-columns: 1fr 1fr; }
@@ -677,6 +866,7 @@
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .work-grid { grid-template-columns: 1fr; }
       .footer-bar { flex-direction: column; gap: 0.375rem; text-align: center; }
+      .job-industry-tags { display: none; }
     }
   </style>
 </head>
@@ -780,16 +970,45 @@
   <!-- ═══ ABOUT ═══ -->
   <section id="about">
     <div class="container">
-      <div class="hero-grid">
 
-        <div>
-          <div class="section-label">About</div>
-          <div class="about-name">
+      <div class="section-label">About</div>
+
+      <div class="about-layout">
+        <!-- Left: photo -->
+        <div class="about-photo-col">
+          <div class="about-photo-sq">
+            <img src="images/headshot.jpg" alt="Qianqian Cao" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Right: all text content -->
+        <div class="about-text-col">
+          <div class="about-name" style="margin-bottom: 0.875rem;">
             <span class="name-en">Qianqian Cao (Cate)</span><span class="about-name-sep"> · </span><span class="name-zh">曹芊芊</span>
           </div>
-          <p class="hero-intro" style="margin-bottom:2rem">
-            MA in Communication at Johns Hopkins (GPA 3.97), specializing in Qualitative &amp; Quantitative Research and Cross-Platform Content Strategy. Bilingual strategist bridging data-driven audience insights with brand storytelling across Chinese and English-speaking markets.
-          </p>
+
+          <div class="about-chips" style="margin-bottom: 1.375rem;">
+            <span class="about-chip">📍 California</span>
+            <span class="about-chip">🗣️ Mandarin · English</span>
+            <span class="about-chip">🧠 INTJ</span>
+            <span class="about-chip">🧗 Rock Climbing · Hiking · National Parks · Painting</span>
+          </div>
+
+          <div class="about-paras">
+            <div class="about-para">
+              <span class="about-para-em">🎓</span>
+              <p>MA in Communication at Johns Hopkins (GPA 3.97), specializing in Qualitative &amp; Quantitative Research and Cross-Platform Content Strategy, coursework consistently ranked top 5% in class, spanning campaign design, semiotics, and behavior-change theory.</p>
+            </div>
+            <div class="about-para">
+              <span class="about-para-em">📱</span>
+              <p>Hands-on experience managing editorial calendars and campaigns across Instagram, TikTok, RedNote (小红书), WeChat, and Facebook, bridging Chinese and English-speaking audiences.</p>
+            </div>
+            <div class="about-para">
+              <span class="about-para-em">📊</span>
+              <p>Research background in audience segmentation, qualitative coding, and structural equation modeling, turning data into narrative that drives strategy, including work where 80% of my strategy recommendations were directly adopted by leadership.</p>
+            </div>
+          </div>
+
           <div class="hero-actions" style="margin-bottom:1.75rem">
             <a href="#portfolio" class="btn btn-primary">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -816,39 +1035,118 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="hero-right">
-          <div class="stat-grid">
-            <div class="stat-card fi fi-d1">
-              <div class="stat-num">3.97</div>
-              <div class="stat-label">GPA · Johns Hopkins</div>
-            </div>
-            <div class="stat-card fi fi-d2">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">Platforms managed</div>
-            </div>
-            <div class="stat-card fi fi-d3">
-              <div class="stat-num">80%</div>
-              <div class="stat-label">Strategy adoption rate</div>
-            </div>
-            <div class="stat-card fi fi-d1">
-              <div class="stat-num">1.4K+</div>
-              <div class="stat-label">Campaign participants</div>
+      <!-- Platform logo marquee -->
+      <div class="plat-marquee-outer fi fi-d1">
+            <div class="plat-marquee-label">Platforms I Manage</div>
+            <div class="plat-marquee-clip">
+              <div class="plat-marquee-track">
+                <!-- set 1 -->
+                <div class="plat-chip">
+                  <img src="images/platforms/instagram.png" alt="Instagram" class="plat-icon">
+                  <span class="plat-name">Instagram</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/tiktok.png" alt="TikTok" class="plat-icon">
+                  <span class="plat-name">TikTok</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/facebook.png" alt="Facebook" class="plat-icon">
+                  <span class="plat-name">Facebook</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/rednote.png" alt="小红书" class="plat-icon">
+                  <span class="plat-name">小红书</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/wechat.png" alt="WeChat" class="plat-icon">
+                  <span class="plat-name">WeChat</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/weibo.png" alt="Weibo" class="plat-icon">
+                  <span class="plat-name">Weibo</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <!-- set 2 -->
+                <div class="plat-chip">
+                  <img src="images/platforms/instagram.png" alt="Instagram" class="plat-icon">
+                  <span class="plat-name">Instagram</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/tiktok.png" alt="TikTok" class="plat-icon">
+                  <span class="plat-name">TikTok</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/facebook.png" alt="Facebook" class="plat-icon">
+                  <span class="plat-name">Facebook</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/rednote.png" alt="小红书" class="plat-icon">
+                  <span class="plat-name">小红书</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/wechat.png" alt="WeChat" class="plat-icon">
+                  <span class="plat-name">WeChat</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/weibo.png" alt="Weibo" class="plat-icon">
+                  <span class="plat-name">Weibo</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <!-- set 3 -->
+                <div class="plat-chip">
+                  <img src="images/platforms/instagram.png" alt="Instagram" class="plat-icon">
+                  <span class="plat-name">Instagram</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/tiktok.png" alt="TikTok" class="plat-icon">
+                  <span class="plat-name">TikTok</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/facebook.png" alt="Facebook" class="plat-icon">
+                  <span class="plat-name">Facebook</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/rednote.png" alt="小红书" class="plat-icon">
+                  <span class="plat-name">小红书</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/wechat.png" alt="WeChat" class="plat-icon">
+                  <span class="plat-name">WeChat</span>
+                </div>
+                <div class="plat-vsep"></div>
+                <div class="plat-chip">
+                  <img src="images/platforms/weibo.png" alt="Weibo" class="plat-icon">
+                  <span class="plat-name">Weibo</span>
+                </div>
+                <div class="plat-vsep"></div>
+              </div>
             </div>
           </div>
-          <div class="platform-card fi fi-d2">
-            <div class="platform-card-label">Platforms</div>
-            <div class="platform-tags">
-              <span class="ptag">Instagram</span>
-              <span class="ptag">TikTok</span>
-              <span class="ptag">Facebook</span>
-              <span class="ptag">Red Note&thinsp;小红书</span>
-              <span class="ptag">WeChat&thinsp;微信</span>
-              <span class="ptag">Weibo&thinsp;微博</span>
-            </div>
-          </div>
+
+      <!-- Venn diagram — full-width scroll animation block -->
+      <div class="venn-block fi fi-d2" id="vennCard">
+        <div class="venn-wrap" id="vennWrap">
+          <div class="venn-circle vc-1">Marketing</div>
+          <div class="venn-circle vc-2">Research</div>
+          <div class="venn-circle vc-3">Design</div>
+          <div class="venn-center-text">THIS IS ME!!!</div>
         </div>
-
       </div>
     </div>
   </section>
@@ -899,25 +1197,31 @@
 
       <!-- Work Experience -->
       <div class="subsection-head"><h3>Work Experience</h3></div>
-      <div class="timeline">
+      <div class="job-list">
 
-        <div class="tl-item fi">
-          <div class="tl-card">
-            <div class="tl-header">
-              <div>
-                <div class="tl-company">
-                  <a href="https://www.sppub.com/" target="_blank" rel="noopener" class="tl-company-link">
-                    Sendpoints Publishing Co., Ltd
-                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-                <div class="tl-role">Content Marketing Intern</div>
+        <div class="job-row fi" onclick="toggleJob(this)">
+          <div class="job-summary">
+            <div class="job-left">
+              <div class="job-title-line">
+                <span class="job-company">Sendpoints Publishing</span>
+                <span class="job-sep-dash">·</span>
+                <span class="job-role">Content Marketing Intern</span>
               </div>
-              <div class="tl-date">Mar – Jul 2024</div>
+              <div class="job-date">Mar – Jul 2024</div>
             </div>
-            <ul class="tl-bullets">
+            <div class="job-right">
+              <div class="job-industry-tags">
+                <span>Publishing</span>
+                <span>Content Marketing</span>
+                <span>Cross-Platform</span>
+              </div>
+              <svg class="job-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="job-details">
+            <ul class="job-bullets">
               <li>Managed cross-platform editorial calendars (Instagram / RED / WeChat), driving 10% engagement growth</li>
               <li>Authored 10+ WeChat long-form articles; owned end-to-end weekly newsletter production</li>
               <li>Coordinated live communications for a 2,000-person art exhibition; collected real-time audience feedback</li>
@@ -925,23 +1229,29 @@
           </div>
         </div>
 
-        <div class="tl-item fi">
-          <div class="tl-card">
-            <div class="tl-header">
-              <div>
-                <div class="tl-company">
-                  <a href="https://www.linkedin.com/company/rhizome-%E7%9D%BF%E4%B8%9B%E6%96%87%E5%8C%96/" target="_blank" rel="noopener" class="tl-company-link">
-                    Rhizome Cultural Consultancy
-                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-                <div class="tl-role">Research Assistant Intern</div>
+        <div class="job-row fi" onclick="toggleJob(this)">
+          <div class="job-summary">
+            <div class="job-left">
+              <div class="job-title-line">
+                <span class="job-company">Rhizome Cultural Consultancy</span>
+                <span class="job-sep-dash">·</span>
+                <span class="job-role">Research Assistant Intern</span>
               </div>
-              <div class="tl-date">Mar – Jul 2023</div>
+              <div class="job-date">Mar – Jul 2023</div>
             </div>
-            <ul class="tl-bullets">
+            <div class="job-right">
+              <div class="job-industry-tags">
+                <span>Cultural Research</span>
+                <span>Audience Segmentation</span>
+                <span>Qualitative Coding</span>
+              </div>
+              <svg class="job-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="job-details">
+            <ul class="job-bullets">
               <li>Qualitative coding of 80,000+ words → audience segmentation reports for trend forecasting</li>
               <li>Analyzed 20+ consumer datasets (health category); designed surveys and interview guides</li>
               <li>Digital behavior research (Taobao / TikTok / RED) → e-commerce content strategy; 80% of recommendations adopted by management</li>
@@ -949,55 +1259,86 @@
           </div>
         </div>
 
-        <div class="tl-item fi">
-          <div class="tl-card">
-            <div class="tl-header">
-              <div>
-                <div class="tl-company">
-                  <a href="https://www.facebook.com/StarryNightMulticulture/" target="_blank" rel="noopener" class="tl-company-link">
-                    Starry Night Cultural Heritage Fund
-                    <svg class="ext-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-                      <path d="M2 9L9 2M9 2H5M9 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-                <div class="tl-role">Brand &amp; Education Content Coordinator</div>
+        <div class="job-row fi" onclick="toggleJob(this)">
+          <div class="job-summary">
+            <div class="job-left">
+              <div class="job-title-line">
+                <span class="job-company">Starry Night Cultural Heritage Fund</span>
+                <span class="job-sep-dash">·</span>
+                <span class="job-role">Content &amp; Research Coordinator</span>
               </div>
-              <div class="tl-date">2022 – 2023</div>
+              <div class="job-date">2022 – 2023</div>
             </div>
-            <ul class="tl-bullets">
+            <div class="job-right">
+              <div class="job-industry-tags">
+                <span>Cultural Heritage</span>
+                <span>Policy Research</span>
+                <span>Education</span>
+              </div>
+              <svg class="job-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="job-details">
+            <ul class="job-bullets">
               <li>Researched and edited 50+ cultural tourism education products (national curriculum aligned)</li>
               <li>Led minority heritage policy analysis; authored rural education advocacy report for government partners</li>
             </ul>
           </div>
         </div>
 
-        <div class="tl-item fi">
-          <div class="tl-card">
-            <div class="tl-header">
-              <div>
-                <div class="tl-company">City Robinson Orienteering Game · 2022 Zhuhai Citizen Fitness Games</div>
-                <div class="tl-role">Marketing Management Coordinator</div>
+        <div class="job-row fi" onclick="toggleJob(this)">
+          <div class="job-summary">
+            <div class="job-left">
+              <div class="job-title-line">
+                <span class="job-company">2022 Zhuhai Citizen Fitness Games</span>
+                <span class="job-sep-dash">·</span>
+                <span class="job-role">Marketing Management Coordinator</span>
               </div>
-              <div class="tl-date">May 2022 – Jan 2023</div>
+              <div class="job-date">May 2022 – Jan 2023</div>
             </div>
-            <ul class="tl-bullets">
+            <div class="job-right">
+              <div class="job-industry-tags">
+                <span>Event Marketing</span>
+                <span>Video Production</span>
+                <span>Brand Campaign</span>
+              </div>
+              <svg class="job-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="job-details">
+            <ul class="job-bullets">
               <li>Produced 5 brand films (Premiere Pro + CapCut); managed cross-platform brand narrative across 5+ platforms</li>
               <li>Led campaign narrative and visual design, reaching 1,400+ participants and a 20% exposure increase</li>
             </ul>
           </div>
         </div>
 
-        <div class="tl-item fi">
-          <div class="tl-card">
-            <div class="tl-header">
-              <div>
-                <div class="tl-company">Tianzige Volunteer Service Institution</div>
-                <div class="tl-role">Communication Volunteer</div>
+        <div class="job-row fi" onclick="toggleJob(this)">
+          <div class="job-summary">
+            <div class="job-left">
+              <div class="job-title-line">
+                <span class="job-company">Tianzige Volunteer Service Institution</span>
+                <span class="job-sep-dash">·</span>
+                <span class="job-role">Communication Volunteer</span>
               </div>
-              <div class="tl-date">Apr 2021 – Dec 2022</div>
+              <div class="job-date">Apr 2021 – Dec 2022</div>
             </div>
-            <ul class="tl-bullets">
+            <div class="job-right">
+              <div class="job-industry-tags">
+                <span>Visual Design</span>
+                <span>Public Welfare</span>
+              </div>
+              <svg class="job-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="job-details">
+            <ul class="job-bullets">
               <li>Designed visual materials for 20+ public welfare events (public health campaigns and educational outreach) using Canva, Photoshop, and Procreate</li>
             </ul>
           </div>
@@ -1546,6 +1887,62 @@
     window.addEventListener('scroll', reveal, { passive: true });
     window.addEventListener('load', reveal);
     setTimeout(reveal, 120);
+
+    /* ── Venn diagram scroll-linked animation ── */
+    (function () {
+      const wrap = document.getElementById('vennWrap');
+      if (!wrap) return;
+      const c1 = wrap.querySelector('.vc-1');
+      const c2 = wrap.querySelector('.vc-2');
+      const c3 = wrap.querySelector('.vc-3');
+      const ct = wrap.querySelector('.venn-center-text');
+      if (!c1 || !c2 || !c3 || !ct) return;
+
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function easeInOut(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+      let raf = null;
+      let lastProgress = -1;
+
+      function update() {
+        raf = null;
+        const rect = wrap.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const vh = window.innerHeight;
+        const raw = (0.85 * vh - center) / (0.5 * vh);
+        const progress = easeInOut(Math.min(1, Math.max(0, raw)));
+
+        if (Math.abs(progress - lastProgress) < 0.002) return;
+        lastProgress = progress;
+
+        // Start: circles spread out; End: equilateral Venn (side=110px, r=85px)
+        const tx1 = lerp(-75, -55, progress);
+        const ty1 = lerp(-90, -32, progress);
+        const tx2 = lerp(75, 55, progress);
+        const ty2 = lerp(-90, -32, progress);
+        const tx3 = lerp(0, 0, progress);
+        const ty3 = lerp(108, 63, progress);
+
+        c1.style.transform = `translate(${tx1}px, ${ty1}px)`;
+        c2.style.transform = `translate(${tx2}px, ${ty2}px)`;
+        c3.style.transform = `translate(${tx3}px, ${ty3}px)`;
+        ct.style.opacity = progress > 0.75 ? ((progress - 0.75) / 0.25).toFixed(3) : '0';
+      }
+
+      function onScroll() {
+        if (!raf) raf = requestAnimationFrame(update);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      update();
+    })();
+
+    /* ── Job row toggle ── */
+    function toggleJob(row) {
+      const isOpen = row.classList.contains('open');
+      document.querySelectorAll('.job-row.open').forEach(r => r.classList.remove('open'));
+      if (!isOpen) row.classList.add('open');
+    }
 
     /* ── Bead curtain — SVG flex-string physics ── */
     let soundPluck = null;
